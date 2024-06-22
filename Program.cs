@@ -9,12 +9,6 @@
             ToDoManager toDoManager = new ToDoManager();
             bool programState = true;
 
-            // REMOVE AFTER TESTING
-            toDoManager.Add(0, "A");
-            toDoManager.Add(1, "B");
-            toDoManager.Add(2, "C");
-            toDoManager.Add(3, "D");
-
             // Keep looping the code while programState remains true.
             while (programState)
             {
