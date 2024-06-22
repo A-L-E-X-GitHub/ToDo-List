@@ -9,6 +9,12 @@
             ToDoManager toDoManager = new ToDoManager();
             bool programState = true;
 
+            // REMOVE AFTER TESTING
+            toDoManager.Add(0, "A");
+            toDoManager.Add(1, "B");
+            toDoManager.Add(2, "C");
+            toDoManager.Add(3, "D");
+
             // Keep looping the code while programState remains true.
             while (programState)
             {
@@ -18,9 +24,9 @@
                 Console.WriteLine("Basic To-do list");
                 Console.WriteLine("-----------------");
                 Console.WriteLine("1. Add a new entry");
-                Console.WriteLine("2. Edit entry by index");
+                Console.WriteLine("2. Edit entry by id");
                 Console.WriteLine("3. List current entries");
-                Console.WriteLine("4. Remove entry by index");
+                Console.WriteLine("4. Remove entry by id");
                 Console.WriteLine("5. Exit application");
                 Console.WriteLine();
                 Console.Write("Input: ");

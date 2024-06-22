@@ -6,7 +6,8 @@
     private bool m_Checked;
 
     // Properties.
-    public int ID { get; set; }
+    public int ID { get { return m_ID; } set { m_ID = value; } }
+    public int DisplayID { get { return m_ID + 1; } }
     public string Title { get; set; }
     public bool Checked { get; set; }
 
@@ -28,7 +29,7 @@
     public override string ToString()
     {
         string isChecked = Checked ? "[x]" : "[ ]";
-        return isChecked + " #" + m_ID.ToString("00") + ": " + Title;
+        return isChecked + " #" + (m_ID + 1).ToString("00") + ": " + Title;
     }
 
 }
