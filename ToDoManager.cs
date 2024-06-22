@@ -1,5 +1,4 @@
-﻿
-public class ToDoManager
+﻿public class ToDoManager
 {
     // A collection of to-do entries.
     private List<ToDoEntry> m_ToDoCollection;
@@ -68,14 +67,54 @@ public class ToDoManager
     public void Edit()
     {
 
+        // Display the list of entries.
+        Console.WriteLine();
+        ListAllEntries();
+
+        Console.WriteLine();
         // Gets a valid index from the user.
         int entryID = GetValidEntryID() - 1;
+        string? input;
 
         // Handle editing
-        /*
-        Console.WriteLine(m_ToDoCollection[index].Title);
-        Console.ReadLine();
-        */
+        while (true)
+        {
+            Console.WriteLine("1. Edit title");
+            Console.WriteLine("2. Toggle check");
+            input = Console.ReadLine();
+
+            if (input != "1" && input != "2")
+            {
+                Console.WriteLine("Invalid input, please try again.");
+            }
+            else
+            {
+                break;
+            }
+
+        }
+
+        // Prompt the user for a new title for the selected entry.
+        if (input == "1")
+        {
+            while (true)
+            {
+                Console.Write("Enter a new title: ");
+                input = Console.ReadLine();
+                if (!string.IsNullOrEmpty(input)) break;
+                Console.WriteLine("Title is null or empty, try again.");
+            }
+
+            m_ToDoCollection[entryID].Title = input;
+
+        }
+
+        // Toggle the checked state of the selected entry.
+        else
+        {
+            // Set the checked state to its inverted state.
+            m_ToDoCollection[entryID].Checked = !m_ToDoCollection[entryID].Checked;
+        }
 
     }
 
